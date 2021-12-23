@@ -3,27 +3,35 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @posts =
+      if params[:category_id]
+        Post.where(category_id: params[:category_id])
+      else
+        Post.all
+      end
   end
 
   # GET /posts/1 or /posts/1.json
   def show
     @comments = @post.comments
+    @categories = Category.all
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+    @categories = Category.all
   end
 
   # GET /posts/1/edit
   def edit
+    @categories = Category.all
   end
 
   # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
-
+    @categories = Category.all
     respond_to do |format|
       if @post.save
         format.html { redirect_to post_url(@post), notice: "Post was successfully created." }

@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label "Category" %>
+    <%= form.select(:category_id, @categories.collect {|c| [c.name, c.id ]}, { :include_blank => 'Select'}) %>
+  </div>
+
+  <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>

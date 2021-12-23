@@ -1,0 +1,29 @@
+[33mcommit fa77ab5210aa35db539bdb9d8f135771509c6c78[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: bandabartlomiej <banda.bartlomiej1@gmail.com>
+Date:   Thu Dec 23 23:14:55 2021 +0100
+
+    dodane zostaly komentarze
+
+[33mcommit e57bb89c873bb6275e7650b17ae9d01f940e5a75[m
+Author: bandabartlomiej <banda.bartlomiej1@gmail.com>
+Date:   Mon Dec 20 22:44:55 2021 +0100
+
+    dodano diva do widoku w layoucie
+
+[33mcommit 9a7e63dece30971a2a66ea2dea8b4ef550d96686[m
+Author: bandabartlomiej <banda.bartlomiej1@gmail.com>
+Date:   Mon Dec 20 22:41:37 2021 +0100
+
+    dodano framework bootstrap by poprawic wyglad
+
+[33mcommit 1c395de43f1256276b33d9c69d6041332e9f6b02[m
+Author: bandabartlomiej <banda.bartlomiej1@gmail.com>
+Date:   Mon Dec 20 22:33:18 2021 +0100
+
+    dodano posty przy uzyciu generatora scaffold
+
+[33mcommit 1ff3160fb3d4911acfdd4fb1dcbd6deac01d7d2c[m
+Author: bandabartlomiej <banda.bartlomiej1@gmail.com>
+Date:   Mon Dec 20 22:18:44 2021 +0100
+
+    nowa apka
