@@ -5,12 +5,12 @@
   <%= @post.title %>
 </p>
 
-
-<p>
-  <strong>Category:</strong>
-  <%= @post.category.try(:name) %>
-</p>
-
+<% if @post.category.present? %>
+  <p>
+    <strong>Category:</strong>
+    <%= linkt_to @post.category.name, posts_url(category_id: @post.category.id) %>
+  </p>
+<% end %>
 
 <p>
   <strong>Body:</strong>
@@ -23,10 +23,15 @@
 <% @comments.each do |comment| %>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title"><%= comment.author %></h5>
+      <h5 class="card-title"><%= comment.user.try(:email) %></h5>
       <p class="card-text"><%= comment.body %></p>
     </div>
   </div>        
 <% end %>
+<br>
 
-<%= render "comments/form", comment: @comment %>
+<% if user_signed_in? %>
+  <%= render "comments/form", comment: @comment %>
+<% else %>
+  <%= link_to "You have to log in to wirte a comments", user_session_path %>
+<% end %>

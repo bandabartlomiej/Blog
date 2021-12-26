@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-
+  before_action :check_author_role!, only: [:new, :create, :update, :destroy] 
   # GET /posts or /posts.json
   def index
     @posts =
@@ -14,7 +14,6 @@ class PostsController < ApplicationController
   # GET /posts/1 or /posts/1.json
   def show
     @comments = @post.comments
-    @categories = Category.all
   end
 
   # GET /posts/new
@@ -30,8 +29,8 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    @post = Post.new(post_params)
-    @categories = Category.all
+    @post = Post.new(post_params.merge(user_id: current_user.id))
+    
     respond_to do |format|
       if @post.save
         format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
@@ -76,4 +75,7 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :body)
     end
+
+
+
 end
