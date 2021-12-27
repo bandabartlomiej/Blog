@@ -23,7 +23,7 @@
 <% @comments.each do |comment| %>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title"><%= comment.user.try(:email) %></h5>
+      <h5 class="card-title"><%= comment.user_id.try(:email) %></h5>
       <p class="card-text"><%= comment.body %></p>
     </div>
   </div>        
